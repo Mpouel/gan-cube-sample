@@ -106,7 +106,6 @@ var cubeStateInitialized = false;
 async function handleFaceletsEvent(event: GanCubeEvent) {
   if (event.type == "FACELETS" && !cubeStateInitialized) {
     if (event.facelets != SOLVED_STATE) {
-      console.log(event.facelets)
       var kpattern = faceletsToPattern(event.facelets);
       var solution = await experimentalSolve3x3x3IgnoringCenters(kpattern);
       var scramble = solution.invert();
